@@ -1,0 +1,2 @@
+# What is this?
+This is a tool I created to scrape the API of the public library of Amsterdam. Because the API is very slow and old it seems to fail a lot. I tried to create a workaround whenever the request for the results fails it will retry.
