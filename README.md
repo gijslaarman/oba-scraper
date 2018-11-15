@@ -60,12 +60,12 @@ this is the endpoint, so the API knows what to do. For now there's no other func
 #### query:
 ```javascript
 query: {
-		q: 'boek',
-		facet: 'Type(book)',
-		refine: true
-	}
+    q: 'boek',
+    facet: 'Type(book)',
+    refine: true
+}
 ```
-Chain your queries on what to look for here. You can add new keys without trouble.
+Chain your queries on what to look for here. You can add new keys without trouble. 
 *list of keys:*
 ```
 ! in progress !
@@ -74,13 +74,13 @@ Chain your queries on what to look for here. You can add new keys without troubl
 #### pages:
 ```javascript
 pages: {
-		// Start from page:
-		page: 1,
-		// Results per page:
-		pagesize: 20,
-		// Maximum pages you want to resolve (maxpages * pagsize = #results)
-		maxpages: 25
-    }
+    // Start from page:
+    page: 1,
+    // Results per page:
+    pagesize: 20,
+    // Maximum pages you want to resolve (maxpages * pagsize = #results)
+    maxpages: 25
+}
 ```
 As said in the comments, it tells the scraper what page to start from, what the results per page is (max. is 20, limitations of the API sadly, and how many pages you want to get. Say you start from page 25 and want to get a maximum of 30 pages, it will fetch pages 25 till 54 (that is 30 pages).
 
@@ -89,11 +89,11 @@ If the maxpages is higher than the amount of pages available for the search term
 #### filter:
 ```javascript
 filter: {
-        // Keys are custom: you can name them whatever, the values are ternary operators that failsafe if a value exists or not.
-        pubYear: `book.publication && book.publication[0].year && book.publication[0].year[0]['_'] ? book.publication[0].year[0]['_'] : null`,
-        language: `book.languages && book.languages[0] && book.languages[0].language && book.languages[0].language[0] ? book.languages[0].language[0]['_'] : null`,
-        originLang: `book.languages && book.languages[0] && book.languages[0]['original-language'] ? book.languages[0]['original-language'][0]['_'] : null`
-    }
+    // Keys are custom: you can name them whatever, the values are ternary operators that failsafe if a value exists or not.
+    pubYear: `book.publication && book.publication[0].year && book.publication[0].year[0]['_'] ? book.publication[0].year[0]['_'] : null`,
+    language: `book.languages && book.languages[0] && book.languages[0].language && book.languages[0].language[0] ? book.languages[0].language[0]['_'] : null`,
+    originLang: `book.languages && book.languages[0] && book.languages[0]['original-language'] ? book.languages[0]['original-language'][0]['_'] : null`
+}
 ```
 This one is a bit trickier. The keys you define here are whatever you name them, this will output that name in your generated JSON. You can create your own ternary operators and fetch your desired data. 
 
