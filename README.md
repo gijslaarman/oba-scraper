@@ -6,7 +6,7 @@ Request an API key from the [OBA](https://www.oba.nl/oba/english.html)
 
 ```
 # Install the package:
-npm install oba-scraper
+npm install @gijslaarman/oba-scraper
 
 # Create .env file for storing the public API key:
 touch .env
