@@ -95,9 +95,53 @@ filter: {
     originLang: `book.languages && book.languages[0] && book.languages[0]['original-language'] ? book.languages[0]['original-language'][0]['_'] : null`
 }
 ```
-This one is a bit trickier. The keys you define here are whatever you name them, this will output that name in your generated JSON. You can create your own ternary operators and fetch your desired data. 
+This one is a bit trickier. The keys you define here are whatever you name them, this will output that name in your generated JSON. You can create your own ternary operators and fetch your desired data. **Write your ternary operators in template literals!**
 
 But how do I know what to write for ternary operator? You can check that with the **Soon to come** [function](#showFormat)
+In the mean time check out this cheatsheet by [DanielvandeVelde](https://github.com/DanielvandeVelde):
+```
+id
+frabl
+detail-page
+coverimages
+  coverimage
+titles
+  title 
+  short-title
+  other-title
+authors 
+  main-author
+  author 
+formats
+  format
+identifiers
+  isbn-id
+  ppn-id
+publication 
+  year
+  publishers
+    publisher
+    edition 
+classification
+  siso-code 
+languages 
+  language
+subjects
+  topical-subject 
+genres
+  genre 
+description 
+  physical-description
+summaries 
+  summary
+notes 
+  note
+target-audiences
+  target-audience
+  undup-info
+```
+
+So inside the literal templates you can define `book.notes` to return an array for notes. Use a ternary operator like in the example to make sure when `book.notes` is not defined it returns something else (e.g: `Null`).
 
 # The API call functions
 For now there's only one function call:

@@ -1,5 +1,5 @@
 {
-  "name": "oba-scraper",
+  "name": "@gijslaarman/oba-scraper",
   "version": "1.0.0",
   "description": "A scraper for the OBA-API",
   "main": "index.js",
@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/gijslaarman/oba-scraper#readme",
   "dependencies": {
+    "dotenv": "^6.1.0",
     "axios": "^0.18.0",
     "xml-to-json-promise": "0.0.3"
-  }
+  },
+  "devDependencies": {}
 }

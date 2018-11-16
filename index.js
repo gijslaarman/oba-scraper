@@ -51,6 +51,7 @@ module.exports = class oba_scraper {
 
 	getPages(search = {}) {
         const url = `https://zoeken.oba.nl/api/v1/search/?authorization=${this.key}${this.stringify(search.query)}&pagesize=${search.pages.pagesize}`
+        console.log(url)
         this.pages.page = search.pages.page
         
 		return this.getHelpers(url, search.pages.pagesize).then(helpers => {
