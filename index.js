@@ -56,7 +56,8 @@ module.exports = class oba_scraper {
         
 		return this.getHelpers(url, search.pages.pagesize).then(helpers => {
             helpers.amount > search.pages.maxpages ? (helpers.amount = search.pages.maxpages) : false
-
+            helpers.amount = search.pages.page + helpers.amount - 1
+            console.log(`Start fetching page ${search.pages.page} to ${helpers.amount}`)
             return new Promise((resolve, reject) => {
                 const promises = [];
 
